@@ -1,0 +1,15 @@
+{
+    "movierServerLocation": "http://dillonchr.webfactional.com/dizzillionaire-movies/",
+    "movies": [
+        {
+            "name": "DNS: Special Edition",
+            "year": 2005,
+            "path": "dns.webm"
+        },
+        {
+            "name": "Bank Bandit",
+            "year": 2005,
+            "path": "bank-bandit.webm"
+        }
+    ]
+}

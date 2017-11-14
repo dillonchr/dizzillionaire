@@ -1,0 +1,7 @@
+.videoPlayer__video {
+    background: magenta;
+}
+
+.videoPlayer__control-field {
+    margin: 0.5rem;
+}

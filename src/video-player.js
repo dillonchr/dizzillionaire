@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import './video-player.css';
 
-export default class VideoPlayer extends Component {
+export default class VideoPlayer extends React.Component {
     state = {
         currentSubtitle: '',
         currentTime: 0,
         duration: 0,
         isPlaying: false,
         loop: false,
-        subtitles: [],
-        rate: 1,
-        title: 'Loading...',
-        year: 0
+        rate: 1
     };
 
     render() {
         return(
             <div className="videoPlayer">
+                <p>{this.props.video.name} <em>({this.props.video.year})</em></p>
                 <video ref={r => this.video = r}
-                       style={{background:'magenta', width: 300}}
-                       src={`movies/${this.props.videoPath}`}
+                       className="videoPlayer__video"
+                       src={`${this.props.server}${this.props.video.path}`}
                        onClick={this.playPauseRestart}
                        onEnded={this.stop.bind(this)}
                        onTimeUpdate={this.updateCurrentTime.bind(this)}
@@ -38,7 +37,7 @@ export default class VideoPlayer extends Component {
                     </div>
                     <div className="videoPlayer__control-field">
                         <label>
-                            Rate
+                            Playback Rate
                             <input type="number" value={this.state.rate} onChange={this.updateRate.bind(this)} step="0.1" />
                         </label>
                     </div>
@@ -54,7 +53,6 @@ export default class VideoPlayer extends Component {
     }
 
     renderPlaybackTime() {
-        return this.state.currentTime;
         const t = ~~this.state.currentTime;
         const minutes = ~~(t / 60);
         const seconds = '' + t % 60;
@@ -87,9 +85,7 @@ export default class VideoPlayer extends Component {
 
     updateCurrentTime() {
         const {currentTime} = this.video;
-        const currentSubtitleObj = this.state.subtitles.find(sub => sub.start <= currentTime && sub.stop > currentTime);
-        const currentSubtitle = currentSubtitleObj ? currentSubtitleObj.text.map((t, i) => <p key={i}>{t}</p>) : '';
-        this.setState({currentTime, currentSubtitle});
+        this.setState({currentTime});
     }
 
     updateRate(e) {
@@ -100,7 +96,7 @@ export default class VideoPlayer extends Component {
     }
 
     updateDuration() {
-        this.setState({duration: this.video.duration}, () => console.log(this.state));
+        this.setState({duration: this.video.duration});
     }
 
     seek(e) {
