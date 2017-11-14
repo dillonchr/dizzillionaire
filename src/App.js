@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
+import VideoPlayer from './video-player';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <img src="/development.gif" className="App-logo" alt="logo" />
-        <h1 className="App-title">in development...</h1>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <br />
+        <VideoPlayer videoPath='dns.mp4' />
       </div>
     );
   }
