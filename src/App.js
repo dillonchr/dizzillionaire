@@ -21,12 +21,7 @@ class App extends Component {
     componentWillMount() {
         fetch('movies.json')
             .then(r => r.json())
-            .then(({movierServerLocation, movies}) => {
-                this.setState({
-                    movierServerLocation,
-                    videos: movies
-                });
-            });
+            .then(videos => this.setState({videos}));
     }
 
     render() {
@@ -34,9 +29,9 @@ class App extends Component {
             <div className="App">
                 <div className="App__header">
                     <marquee>
-                        <img src="/development.gif" className="App__logo" alt="logo" />
+                        <img src="development.gif" className="App__logo" alt="logo" />
                         Dizzillionaire Productions...
-                        <img src="/development.gif" className="App__logo" alt="logo" />
+                        <img src="development.gif" className="App__logo" alt="logo" />
                     </marquee>
                 </div>
                 <div className="App__sidebar">
@@ -45,7 +40,7 @@ class App extends Component {
                     </ul>
                 </div>
                 <div className="App__content">
-                    {!!this.state.selectedVideo && <VideoPlayer server={this.state.movierServerLocation} video={this.state.selectedVideo} />}
+                    {!!this.state.selectedVideo && <VideoPlayer video={this.state.selectedVideo} />}
                     {!this.state.selectedVideo && <p>Select a video on the left</p>}
                 </div>
             </div>

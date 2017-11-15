@@ -17,7 +17,7 @@ export default class VideoPlayer extends React.Component {
                 <p>{this.props.video.name} <em>({this.props.video.year})</em></p>
                 <video ref={r => this.video = r}
                        className="videoPlayer__video"
-                       src={`${this.props.server}${this.props.video.path}`}
+                       src={`movies/${this.props.video.path}`}
                        onClick={this.playPauseRestart}
                        onEnded={this.stop.bind(this)}
                        onTimeUpdate={this.updateCurrentTime.bind(this)}

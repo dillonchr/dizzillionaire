@@ -2,7 +2,7 @@
   "name": "dizzillionaire.neocities.org",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dizzillionaire.neocities.org/",
+  "homepage": "http://dillonchr.webfactional.com/dizzillionaire/",
   "dependencies": {
     "react": "^16.1.0",
     "react-dom": "^16.1.0"

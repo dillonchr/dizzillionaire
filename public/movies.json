@@ -1,15 +1,22 @@
-{
-    "movierServerLocation": "http://dillonchr.webfactional.com/dizzillionaire-movies/",
-    "movies": [
-        {
-            "name": "DNS: Special Edition",
-            "year": 2005,
-            "path": "dns.webm"
-        },
-        {
-            "name": "Bank Bandit",
-            "year": 2005,
-            "path": "bank-bandit.webm"
-        }
-    ]
-}
+[
+    {
+        "name": "DNS: Special Edition",
+        "year": 2005,
+        "path": "dns.mp4"
+    },
+    {
+        "name": "Bank Bandit",
+        "year": 2005,
+        "path": "bank-bandit.mp4"
+    },
+    {
+        "name": "Weezer - Buddy Holly",
+        "year": 2006,
+        "path": "buddy-holly.mp4"
+    },
+    {
+        "name": "Blackout",
+        "year": 2009,
+        "path": "blackout.mp4"
+    }
+]
